@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MobilaAlex.ro</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +38,7 @@
     }
 
     .logo{
-      font-size:28px;
+      font-size:30px;
       font-weight:700;
     }
 
@@ -45,11 +46,16 @@
       color:#d4af37;
     }
 
+    nav{
+      display:flex;
+      gap:20px;
+    }
+
     nav a{
       color:white;
       text-decoration:none;
-      margin-left:20px;
       transition:0.3s;
+      font-weight:500;
     }
 
     nav a:hover{
@@ -57,22 +63,22 @@
     }
 
     .hero{
-      height:90vh;
+      height:85vh;
       background:
-      linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+      linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
       url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop')
       center/cover;
 
       display:flex;
-      align-items:center;
       justify-content:center;
+      align-items:center;
       text-align:center;
       color:white;
-      padding:40px;
+      padding:30px;
     }
 
     .hero-content{
-      max-width:850px;
+      max-width:900px;
     }
 
     .hero h1{
@@ -81,51 +87,37 @@
     }
 
     .hero p{
-      font-size:20px;
-      line-height:1.7;
+      font-size:22px;
+      line-height:1.8;
       margin-bottom:35px;
     }
 
-    .btn{
+    .hero-btn{
       display:inline-block;
-      padding:16px 32px;
+      padding:16px 34px;
+      background:#d4af37;
+      color:black;
       border-radius:50px;
       text-decoration:none;
       font-weight:600;
       transition:0.3s;
-      margin:10px;
     }
 
-    .btn-primary{
-      background:#d4af37;
-      color:black;
-    }
-
-    .btn-primary:hover{
+    .hero-btn:hover{
       transform:translateY(-3px);
     }
 
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,0.3);
-      color:white;
-      background:rgba(255,255,255,0.08);
-    }
-
-    .btn-secondary:hover{
-      background:rgba(255,255,255,0.15);
-    }
-
-    section{
+    .category-section{
       padding:80px 5%;
     }
 
     .section-title{
-      text-align:center;
       font-size:42px;
-      margin-bottom:50px;
+      margin-bottom:40px;
+      text-align:center;
     }
 
-    .products{
+    .products-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:30px;
@@ -153,34 +145,36 @@
       padding:24px;
     }
 
-    .product-info h3{
-      font-size:20px;
-      margin-bottom:10px;
+    .product-title{
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:14px;
+      min-height:60px;
     }
 
-    .price{
+    .product-price{
       color:#d4af37;
-      font-size:24px;
+      font-size:28px;
       font-weight:700;
       margin-bottom:20px;
     }
 
     .whatsapp-btn{
-      width:100%;
       display:flex;
       justify-content:center;
       align-items:center;
+      width:100%;
       padding:14px;
+      border-radius:50px;
+      text-decoration:none;
       background:#25D366;
       color:white;
-      text-decoration:none;
-      border-radius:50px;
       font-weight:600;
       transition:0.3s;
     }
 
     .whatsapp-btn:hover{
-      background:#1eb95a;
+      background:#1fb65a;
     }
 
     footer{
@@ -200,9 +194,9 @@
       background:#25D366;
       border-radius:50%;
       display:flex;
-      align-items:center;
       justify-content:center;
-      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      align-items:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
       z-index:9999;
     }
 
@@ -212,12 +206,16 @@
 
     @media(max-width:768px){
 
+      nav{
+        display:none;
+      }
+
       .hero h1{
         font-size:42px;
       }
 
-      nav{
-        display:none;
+      .hero p{
+        font-size:18px;
       }
 
     }
@@ -235,8 +233,10 @@
   </div>
 
   <nav>
-    <a href="#products">Produse</a>
-    <a href="https://wa.me/40757477926">WhatsApp</a>
+    <a href="#dormitoare">Dormitoare</a>
+    <a href="#bucatarii">Bucătării</a>
+    <a href="#paturi">Paturi</a>
+    <a href="#dulapuri">Dulapuri</a>
   </nav>
 
 </header>
@@ -248,36 +248,26 @@
     <h1>Mobilă Modernă Pentru Casa Ta</h1>
 
     <p>
-      Dormitoare, dulapuri, bucătării, saltele și mobilier premium la prețuri accesibile.
+      Dormitoare, bucătării, paturi și dulapuri moderne la prețuri excelente.
     </p>
 
-    <a href="#products" class="btn btn-primary">
-      Vezi Produsele
-    </a>
+    <a class="hero-btn"
+       href="https://wa.me/40757477926">
 
-    <a href="https://wa.me/40757477926"
-       class="btn btn-secondary">
-      Comandă pe WhatsApp
+       Comandă pe WhatsApp
+
     </a>
 
   </div>
 
 </section>
 
-<section id="products">
-
-  <h2 class="section-title">
-    Produse Populare
-  </h2>
-
-  <div class="products" id="products-grid">
-
-  </div>
-
-</section>
+<div id="content"></div>
 
 <footer>
+
   © 2026 MobilaAlex.ro • 0757 477 926
+
 </footer>
 
 <a class="floating-whatsapp"
@@ -289,57 +279,142 @@
 
 <script>
 
-async function loadProducts(){
+const categories = [
 
-  try{
+  {
+    id:'dormitoare',
+    title:'Dormitoare',
+    files:[
+      'json/dormitoare/dormitor-clio.json',
+      'json/dormitoare/dormitor-eva.json',
+      'json/dormitoare/dormitor-filip.json',
+      'json/dormitoare/dormitor-sofia.json',
+      'json/dormitoare/dormitor-eric-250.json',
+      'json/dormitoare/dormitor-imperial.json'
+    ]
+  },
 
-    const response = await fetch('products.json');
-    const products = await response.json();
+  {
+    id:'bucatarii',
+    title:'Bucătării',
+    files:[
+      'json/bucatarii/bucatarii.json'
+    ]
+  },
 
-    const grid = document.getElementById('products-grid');
+  {
+    id:'paturi',
+    title:'Paturi',
+    files:[
+      'json/paturi/paturi.json'
+    ]
+  },
 
-    products.slice(0,120).forEach(product => {
+  {
+    id:'dulapuri',
+    title:'Dulapuri',
+    files:[
+      'json/dulapuri/dulapuri.json'
+    ]
+  }
 
-      const card = document.createElement('div');
+];
 
-      card.className = 'product-card';
+async function loadCategory(category){
 
-      card.innerHTML = `
+  const content = document.getElementById('content');
 
-        <img src="${product.image}" alt="${product.title}">
+  const section = document.createElement('section');
 
-        <div class="product-info">
+  section.className = 'category-section';
 
-          <h3>${product.title}</h3>
+  section.id = category.id;
 
-          <div class="price">
-            ${product.price}
+  section.innerHTML = `
+  
+    <h2 class="section-title">${category.title}</h2>
+
+    <div class="products-grid" id="${category.id}-grid"></div>
+
+  `;
+
+  content.appendChild(section);
+
+  const grid = document.getElementById(`${category.id}-grid`);
+
+  for(const file of category.files){
+
+    try{
+
+      const response = await fetch(file);
+
+      const products = await response.json();
+
+      products.forEach(product => {
+
+        const title =
+          product.Title_URL ||
+          product.title ||
+          'Produs';
+
+        const image =
+          product.Image ||
+          product.image ||
+          '';
+
+        const price =
+          product.Price ||
+          product.price ||
+          '';
+
+        const card = document.createElement('div');
+
+        card.className = 'product-card';
+
+        card.innerHTML = `
+
+          <img src="${image}" alt="${title}">
+
+          <div class="product-info">
+
+            <div class="product-title">
+              ${title}
+            </div>
+
+            <div class="product-price">
+              ${price}
+            </div>
+
+            <a class="whatsapp-btn"
+               href="https://wa.me/40757477926?text=Salut,%20sunt%20interesat%20de%20${encodeURIComponent(title)}">
+
+               Comandă pe WhatsApp
+
+            </a>
+
           </div>
 
-          <a class="whatsapp-btn"
-             href="https://wa.me/40757477926?text=Salut,%20sunt%20interesat%20de%20${encodeURIComponent(product.title)}">
+        `;
 
-             Comandă pe WhatsApp
+        grid.appendChild(card);
 
-          </a>
+      });
 
-        </div>
+    }catch(error){
 
-      `;
+      console.log('Nu s-a putut încărca:',file);
 
-      grid.appendChild(card);
-
-    });
-
-  }catch(error){
-
-    console.log(error);
+    }
 
   }
 
 }
 
-loadProducts();
+categories.forEach(category => {
+
+  loadCategory(category);
+
+});
 
 </script>
 
